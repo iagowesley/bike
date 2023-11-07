@@ -45,7 +45,7 @@ ul {
     display: flex;
     justify-content: center;
     list-style: none;
-    gap: 18%;
+    gap: 16%;
     align-items: center;
 }
 
@@ -385,7 +385,19 @@ button {
         gap: 40px;
     
     }
+.mapa {
+    margin-top: 19px;
+}
 
+.texto-loc {
+    margin-top: 20px;
+}
+.rodape {
+    margin-top: 100px;
+}
+.footer {
+    margin-top: 100px;
+}
     }
 
 @media (max-width:1200px) {
@@ -398,7 +410,6 @@ button {
     .menu-footer ul {
         margin: 0;
         padding: 0;
-        border: 1px solid red;
         gap: 10px;
         display: flex;
         justify-content: start;
