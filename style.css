@@ -58,6 +58,17 @@ ul li {
 ul li a {
     text-decoration: none;
     color: #fff;
+    transition: 0.4s;
+    border-bottom: 2px solid #000000;
+
+}
+
+ul li a:hover {
+    border-bottom: 2px solid #ff8800;
+}
+
+.melhor {
+    text-decoration: underline #ff8800;
 }
 
 #main {
@@ -201,6 +212,13 @@ button {
     font-size: 16px;
     color: #ff8800;
   }
+
+  button .local {
+    margin: 0;
+    position: relative;
+    font-size: 16px;
+    color: #ff8800;
+  }
   button .insta::before {
     position: absolute;
   /*   box-sizing: border-box; */
@@ -233,6 +251,16 @@ button {
     transition-delay: 0.2s;
   }
 
+  button .local::before {
+    position: absolute;
+  /*   box-sizing: border-box; */
+    content: "Como chegar lá";
+    width: 0%;
+    inset: 0;
+    color: var(--hovered-color);
+    overflow: hidden;
+    transition: 0s ease-out;
+  }
 
 .pat {
     display: flex;
@@ -293,6 +321,52 @@ button {
     justify-content: center;
 }
 
+.loc {
+    margin-top: 90px;
+    height: 500px;
+}
+
+.texto-loc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rodape {
+    height: 200px;
+}
+
+.subb {
+    color: #fff;
+}
+
+.frase-footer {
+    font-size: 14px;
+    margin-top: 50px;
+}
+.texto-footer {
+    color: #fff;
+}
+.coluna-1-footer {
+    height: 200px;
+    display: flex;
+    justify-content: start;
+}
+
+.menu-footer ul {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.redes {
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+}
+
+
 
 /* responsivo */
 
@@ -321,6 +395,19 @@ button {
 
     }
 
+    .menu-footer ul {
+        margin: 0;
+        padding: 0;
+        border: 1px solid red;
+        gap: 10px;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        margin-bottom: 60px;
+    }
+.rodape {
+    margin-top: 300px;
+}
     button, .patrocinio, .imgs-pat{
         padding-left: 20px;
 
@@ -354,6 +441,11 @@ button {
         padding-left: 20px;
 
     }
+
+    .subb {
+        padding-left: 20px;
+        color: #fff;
+    }
     .container .fat-bike {
         display: none;
     }
@@ -378,5 +470,12 @@ button {
 
     .img-bikesol {
         display: none;
+    }
+
+    .sub {
+        padding-left: 0;
+    }
+    .patrocinio {
+        padding-left: 0;
     }
 }
