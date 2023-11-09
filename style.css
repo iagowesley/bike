@@ -6,9 +6,9 @@
     font-family: 'Rubik', sans-serif;
 }
 
-body {
+html, body {
     background-color: #000;
-
+    scroll-behavior: smooth;
 }
 
 nav {
@@ -22,6 +22,8 @@ nav {
 
 .menu {
     width: 50%;
+    overflow: hidden;
+
 }
 
 .logo {
@@ -46,9 +48,19 @@ ul {
     justify-content: center;
     list-style: none;
     gap: 16%;
+    overflow: hidden;
     align-items: center;
 }
-
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    color: white;
+    padding: 14px 16px;
+  }
+#menu-toggle {
+    display: none;
+}
 ul li {
 
     padding-top: 10px;
@@ -70,6 +82,13 @@ ul li a:hover {
 .melhor {
     text-decoration: underline #ff8800;
 }
+.active {
+    border: 1px solid red;
+    background-color: #f2f2f2; /* Cor de fundo destacada */
+    color: #333; /* Cor do texto destacado */
+    font-weight: bold; /* Texto em negrito para destaque adicional */
+  }
+
 
 #main {
     width: 100%;
@@ -367,13 +386,81 @@ button {
 }
 
 
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom:20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.btn::after {
+    content: "↑";
+    font-size: 32px;
+    font-weight: bold;
+    color: aliceblue;
+    transition: margin-top 250ms;
+}
+.btn:hover::after {
+    margin-top:-8px;
+}
+
 
 /* responsivo */
 
 @media (max-width:768px) {
-    .menu {
+    
+    .menu ul {
         display: none;
     }
+
+    .menu-icon {
+        width: 35%;
+        display: flex;
+        margin-left: 65%;
+      }
+
+    
+
+      
+      .menu li {
+        display: flex;
+margin-top: -50px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .menu li a {
+        display: flex;
+        text-align: center;
+      }
+      .menu ul {
+        margin-top: -20px;
+        display: none;
+        position: absolute;
+        background-color: #000000;
+        width: 100%;
+      }
+      
+      #menu-toggle:checked + .menu-icon + ul {
+        display: flex;
+        margin-left: -50%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 100px;
+        width: 100%;
+        height: 100vh;
+      }
+      #menu-toggle {
+        display: none;
+      }
     nav {
         display: flex;
         justify-content: start;
@@ -398,6 +485,12 @@ button {
 .footer {
     margin-top: 100px;
 }
+
+
+
+
+
+
     }
 
 @media (max-width:1200px) {
@@ -407,6 +500,19 @@ button {
 
     }
 
+    .texto-loc {
+        margin-top: 40px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+
+    button .insta, button .local {
+        margin-left: -20px;
+    }
+.emojis {
+    visibility: hidden;
+}
     .menu-footer ul {
         margin: 0;
         padding: 0;
@@ -419,7 +525,7 @@ button {
 .rodape {
     margin-top: 300px;
 }
-    button, .patrocinio, .imgs-pat{
+    button, .imgs-pat{
         padding-left: 20px;
 
     }
@@ -461,9 +567,10 @@ button {
         display: none;
     }
 .coluna-1 {
+    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
 }
     .coluna-2 {
         display: flex;
@@ -472,6 +579,9 @@ button {
         border: none;
     }
 
+    .footer {
+        margin-bottom: 400px;
+    }
     .emojis {
         gap: 20px;
         display: block;
